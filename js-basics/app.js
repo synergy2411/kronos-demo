@@ -214,15 +214,21 @@
 
 // call, apply, bind
 
-var user = {
-    firstName : "Foo",
-    lastName : "Bar",
-    getFullName : function(){
-        return this.firstName + " " + this.lastName;
-    }
-}
+// var user = {
+//     firstName : "Foo",
+//     lastName : "Bar",
+//     getFullName : function(){
+//         return this.firstName + " " + this.lastName;
+//     }
+// }
 
+// var logName = function(lang1, lang2){
+//     console.log("[LOGGING]", this.getFullName());
+//     console.log("Languages : " , lang1, lang2);
+// }
 
+// logName.call(user, "es", "en");
+// logName.apply(user, ["en", "es"]);
 
 
 
@@ -251,3 +257,186 @@ var user = {
 // var logFullName = logName.bind(user);
 
 // logFullName();
+
+
+
+// CURRYING
+
+// function multiply(a,b,c){
+//     return a * b * c;
+// }
+
+// var multipleByTwo = multiply.bind(this, 2, 3);
+// var multipleByThree = multiply.bind(this, 3);
+
+// console.log(multipleByTwo(2));
+
+// console.log(multipleByTwo(5));
+// console.log(multipleByThree(6));
+
+
+// add(a,b,c); add(a)(b)(c);
+
+// HOF
+
+// XHR Call - 3s ;
+
+// var greet = function(error, data){
+//     if(error){
+//         console.log("[ERROR]", error);
+//     }else{
+//         console.log("Hello ", data);
+//         return {data : data, id : 1};
+//     }
+// }
+
+// var asyncFunction = function(){
+//     // setTimeout(function(){
+//     //     cb(null, {name : "Ajay"});
+//     // }, 3000);
+
+//     var promise = new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve("Here the data comes...")
+//         }, 2000);
+//     });
+//     return promise;
+// }
+
+// asyncFunction()
+//     .then(data => {
+//         return greet(null, data);           // {data, id}
+//     })
+//     .then(modifiedData => console.log("[Modified data]", modifiedData))
+//     .catch(err => console.log(err));
+
+
+// var sayHello = function(cb, arr){
+//     // Code goes here....
+//     if(arr.length > 2){
+//        cb(null, "Ajay");
+//     }else{
+//         cb(new Error("Something Bad happened!"));
+//     }
+
+// }
+
+// sayHello(greet, [2,3]);
+
+// Closure
+
+// function testClosure(){
+//     var x = 4;
+
+//     return function(){
+//         return ++x;
+//     }
+// }
+
+// var tempFunc = testClosure();
+// console.log(tempFunc());        // 5
+// console.log(tempFunc());        // ?
+
+// function buildFunctions() {
+
+//     var arr = [];
+//     for (var i = 0; i < 3; i++) {
+//         // let j = i;
+//         arr.push(
+//             (function(j){
+//                 return function(){
+//                     return j;
+//                 }
+//             }(i))
+//         )
+//     }
+//     return arr;
+// }
+
+// var newArr = buildFunctions();
+// console.log(newArr[0]());       // ?
+// console.log(newArr[1]());       // ?
+// console.log(newArr[2]());       // ?
+
+
+// add(a,b,c); add(a)(b)(c)
+
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a + b + c;
+//         }
+//     }
+// }
+
+// var a = add(3);
+// var b = a(4);
+// var d = a(5);
+// console.log(b(5));
+// console.log(d(6));      
+
+// console.log("ADDITION : " , add(2)(3)(4));
+
+
+// function qurey(valA){
+//     return {
+//         getData : function(valB){
+//             return {
+//                 getMyValue : function(valC){
+//                     return "Values : " + valA + " " + valB + " " + valC;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// console.log(qurey("First").getData("Second").getMyValue("Third"));
+
+
+
+
+
+var Shoe = {
+    size : 8,
+    gender : "Women"
+}
+
+// var magicShoe = Object.create(Shoe);
+
+// var magicShoe = {};
+
+// magicShoe.__proto__ = Shoe;
+
+// console.log(magicShoe.gender);
+
+// console.log(magicShoe.hasOwnProperty('gender'));        // ?
+
+// console.log(Shoe.isPrototypeOf(magicShoe));        //
+
+// console.log(magicShoe.__proto__.__proto__);
+
+
+
+
+function Person(fname, lname){
+    this.fname = fname;
+    this.lname = lname;
+    this.greeting = function(){
+        return "Hello " + this.fname + " " + this.lname;    
+    }
+}
+
+Person.prototype.greet = function(){
+    return "Hello " + this.fname + " " + this.lname;
+}
+
+var foo = new Person("Foo", "Bar")
+
+console.log(foo.greeting());
+
+// https://github.com/synergy2411/kronos-demo`
+
+
+
+
