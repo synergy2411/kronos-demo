@@ -435,7 +435,7 @@ var foo = new Person("Foo", "Bar")
 
 console.log(foo.greeting());
 
-// https://github.com/synergy2411/kronos-demo`
+// https://github.com/synergy2411/kronos-demo
 
 
 
