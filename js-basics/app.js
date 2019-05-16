@@ -419,24 +419,40 @@ var Shoe = {
 
 
 
-function Person(fname, lname){
-    this.fname = fname;
-    this.lname = lname;
-    this.greeting = function(){
-        return "Hello " + this.fname + " " + this.lname;    
-    }
-}
+// function Person(fname, lname){
+//     this.fname = fname;
+//     this.lname = lname;
+//     this.greeting = function(){
+//         return "Hello " + this.fname + " " + this.lname;    
+//     }
+// }
 
-Person.prototype.greet = function(){
-    return "Hello " + this.fname + " " + this.lname;
-}
+// Person.prototype.greet = function(){
+//     return "Hello " + this.fname + " " + this.lname;
+// }
 
-var foo = new Person("Foo", "Bar")
+// var foo = new Person("Foo", "Bar")
 
-console.log(foo.greeting());
+// console.log(foo.greeting());
 
 // https://github.com/synergy2411/kronos-demo
 
+var str = "Welcome to Javascript!"
 
+console.log(str.length);    //  ?
 
+String.prototype.countAll = function(letter){
+    var counter =0;
+
+    for(var i =0 ; i<= this.length ; i++){
+        if(this.charAt(i).toUpperCase() === letter.toUpperCase()){
+            counter++;
+        }
+    }
+    return counter;
+}
+
+console.log(str.countAll('e'));
+var newStr = "Hello JavaScript"
+console.log(newStr.countAll('l'));
 
