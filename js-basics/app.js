@@ -437,22 +437,43 @@ var Shoe = {
 
 // https://github.com/synergy2411/kronos-demo
 
-var str = "Welcome to Javascript!"
+// var str = "Welcome to Javascript!"
 
-console.log(str.length);    //  ?
+// console.log(str.length);    //  ?
 
-String.prototype.countAll = function(letter){
-    var counter =0;
+// String.prototype.countAll = function(letter){
+//     var counter =0;
 
-    for(var i =0 ; i<= this.length ; i++){
-        if(this.charAt(i).toUpperCase() === letter.toUpperCase()){
-            counter++;
-        }
-    }
-    return counter;
-}
+//     for(var i =0 ; i<= this.length ; i++){
+//         if(this.charAt(i).toUpperCase() === letter.toUpperCase()){
+//             counter++;
+//         }
+//     }
+//     return counter;
+// }
 
-console.log(str.countAll('e'));
-var newStr = "Hello JavaScript"
-console.log(newStr.countAll('l'));
+// console.log(str.countAll('e'));
+// var newStr = "Hello JavaScript"
+// console.log(newStr.countAll('l'));
+
+
+
+// function demo(arr){
+//     // 'use strict';    
+//     if(arr.length > 2){
+//         let load = "LOADING";
+//         console.log(flash);     //?
+//     }else{
+//         let flash = "FLASHING";
+//     }
+// }
+
+// demo([2,3,4]);
+
+
+
+
+
+
+
 
