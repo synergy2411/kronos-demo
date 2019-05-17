@@ -5,6 +5,8 @@
 <title>Users App</title>
 <script src="./node_modules/angular/angular.min.js"></script>
 <script src="js/app.js"></script>
+<script src="./js/services/my-services.js"></script>
+<script src="./js/directives/my-directives.js"></script>
 
 <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="./styles.css">
@@ -54,12 +56,14 @@
             </div>
             <div ng-show="tab ===2 ">
 
-                <!-- Scope Isolation 
+                <!-- 
+                    Scope Isolation 
                 <p>Greet in Parent : {{greet}}</p>
                 <demo-directive greet = "greet" clicked = "clicked()"></demo-directive>
                     -->
+
                 <!-- Element -->
-                <!-- <my-comment></my-comment> -->
+                <my-comment></my-comment>
 
                 <!-- Attribute -->
                 <!-- <div my-comment></div> -->
