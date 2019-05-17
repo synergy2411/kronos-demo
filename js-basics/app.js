@@ -397,79 +397,80 @@
 
 
 
-var Shoe = {
-    size : 8,
-    gender : "Women"
-}
-
-// var magicShoe = Object.create(Shoe);
-
-// var magicShoe = {};
-
-// magicShoe.__proto__ = Shoe;
-
-// console.log(magicShoe.gender);
-
-// console.log(magicShoe.hasOwnProperty('gender'));        // ?
-
-// console.log(Shoe.isPrototypeOf(magicShoe));        //
-
-// console.log(magicShoe.__proto__.__proto__);
-
-
-
-
-// function Person(fname, lname){
-//     this.fname = fname;
-//     this.lname = lname;
-//     this.greeting = function(){
-//         return "Hello " + this.fname + " " + this.lname;    
-//     }
+// var Shoe = {
+//     size: 8,
+//     gender: "Women"
 // }
 
-// Person.prototype.greet = function(){
-//     return "Hello " + this.fname + " " + this.lname;
-// }
+    // var magicShoe = Object.create(Shoe);
 
-// var foo = new Person("Foo", "Bar")
+    // var magicShoe = {};
 
-// console.log(foo.greeting());
+    // magicShoe.__proto__ = Shoe;
 
-// https://github.com/synergy2411/kronos-demo
+    // console.log(magicShoe.gender);
 
-// var str = "Welcome to Javascript!"
+    // console.log(magicShoe.hasOwnProperty('gender'));        // ?
 
-// console.log(str.length);    //  ?
+    // console.log(Shoe.isPrototypeOf(magicShoe));        //
 
-// String.prototype.countAll = function(letter){
-//     var counter =0;
-
-//     for(var i =0 ; i<= this.length ; i++){
-//         if(this.charAt(i).toUpperCase() === letter.toUpperCase()){
-//             counter++;
-//         }
-//     }
-//     return counter;
-// }
-
-// console.log(str.countAll('e'));
-// var newStr = "Hello JavaScript"
-// console.log(newStr.countAll('l'));
+    // console.log(magicShoe.__proto__.__proto__);
 
 
 
-// function demo(arr){
-//     // 'use strict';    
-//     if(arr.length > 2){
-//         let load = "LOADING";
-//         console.log(flash);     //?
-//     }else{
-//         let flash = "FLASHING";
-//     }
-// }
 
-// demo([2,3,4]);
+    // function Person(fname, lname){
+    //     this.fname = fname;
+    //     this.lname = lname;
+    //     this.greeting = function(){
+    //         return "Hello " + this.fname + " " + this.lname;    
+    //     }
+    // }
 
+    // Person.prototype.greet = function(){
+    //     return "Hello " + this.fname + " " + this.lname;
+    // }
+
+    // var foo = new Person("Foo", "Bar")
+
+    // console.log(foo.greeting());
+
+    // https://github.com/synergy2411/kronos-demo
+
+    // var str = "Welcome to Javascript!"
+
+    // console.log(str.length);    //  ?
+
+    // String.prototype.countAll = function(letter){
+    //     var counter =0;
+
+    //     for(var i =0 ; i<= this.length ; i++){
+    //         if(this.charAt(i).toUpperCase() === letter.toUpperCase()){
+    //             counter++;
+    //         }
+    //     }
+    //     return counter;
+    // }
+
+    // console.log(str.countAll('e'));
+    // var newStr = "Hello JavaScript"
+    // console.log(newStr.countAll('l'));
+
+
+
+    // function demo(arr){
+    //     // 'use strict';    
+    //     if(arr.length > 2){
+    //         let load = "LOADING";
+    //         console.log(flash);     //undefined
+    //     }else{
+    //         let flash = "FLASHING";
+    //     }
+    // }
+
+    // demo([2,3,4]);
+
+   
 
 
 
