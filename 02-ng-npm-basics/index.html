@@ -10,24 +10,55 @@
 
 <body>
     <h1 class="text-center">Users App</h1>
-
+    
     <div ng-controller="UserController" class="container">
         <h2>{{ greet }}</h2>
 
         <ul class="list-unstyled">
-            <li class="well" ng-repeat="user in users">
+            <!-- <li class="well" ng-repeat="user in users | limitTo : 2"> -->
+            <li class="well" ng-repeat="user in users | orderBy : 'income' ">
                 <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
                         <img ng-src="{{user.image}}" class="img-responsive img-circle">
                     </div>
-                    <div class="col-xs-9 col-sm-9 col-md-9">
-                        <h2>{{ user.firstName + " " + user.lastName }}</h2>
-                        <p>Date of Birth : <span ng-bind="user.dob"></span></p>
-                        <p ng-if="user.isWorking">Income : {{ user.income }}</p>
+                    <div class="col-xs-6 col-sm-9 col-md-9">
+                        <h2>{{ user.firstName + " " + user.lastName | uppercase}}</h2>
+                        <p>Date of Birth : <span ng-bind="user.dob | date"></span></p>
+                        <p ng-if="user.isWorking">Income : {{ user.income | currency : 'INR' }}</p>
                     </div>
                 </div>
+
+                <hr>
+                <div ng-init = "tab = 1">
+                    <ul class="nav nav-pills">
+                        <li><a href ng-click="tab = 1">Show Comments</a></li>
+                        <li><a href ng-click="tab = 2">Add Comments</a></li>
+                    </ul>
+                
+                    <br>
+
+                    <div ng-show = "tab ===1 ">
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat = "comment in user.comments">
+                            <span class="badge">Stars : {{ comment.stars }}</span>    
+                            <blockquote>
+                                {{ comment.body}} 
+                                <cite>by {{ comment.author }} </cite>
+                            </blockquote>
+                            </li>
+                        </u>
+                    </div>
+                    <div ng-show = "tab ===2 ">
+                        2
+                    </div>
+                
+                </div>
+
             </li>
         </ul>
+
+        <!-- Custom Filter Demo -->
+            Intergers : {{ [2,3,4,5,6,7,8,9] | getIntegers}}
 
 
     </div>
