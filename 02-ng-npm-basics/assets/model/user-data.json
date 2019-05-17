@@ -1,0 +1,67 @@
+{
+    "userdata": [
+        {
+            "firstName": "Bill",
+            "lastName": "Gates",
+            "dob": "1965-12-01T18:30:00.000Z",
+            "isWorking": true,
+            "income": 50000,
+            "company": "Microsoft",
+            "image": "./assets/images/bill.jpg",
+            "comments": [
+                {
+                    "stars": 4,
+                    "body": "Great Work.",
+                    "author": "abc@test.com"
+                },
+                {
+                    "stars": 5,
+                    "body": "Well done.",
+                    "author": "abc@test.com"
+                }
+            ]
+        },
+        {
+            "firstName": "Steve",
+            "lastName": "Jobs",
+            "dob": "1965-08-01T18:30:00.000Z",
+            "isWorking": false,
+            "income": 0,
+            "company": "Apple",
+            "image": "./assets/images/steve.png",
+            "comments": [
+                {
+                    "stars": 4,
+                    "body": "Great Work.",
+                    "author": "abc@test.com"
+                },
+                {
+                    "stars": 2,
+                    "body": "Great Work.",
+                    "author": "abc@test.com"
+                }
+            ]
+        },
+        {
+            "firstName": "Tim B.",
+            "lastName": "Lee",
+            "dob": "1965-01-01T18:30:00.000Z",
+            "isWorking": true,
+            "income": 30000,
+            "company": "World Wide Web",
+            "image": "./assets/images/tim.jpg",
+            "comments": [
+                {
+                    "stars": 4,
+                    "body": "Great Work.",
+                    "author": "abc@test.com"
+                },
+                {
+                    "stars": 2,
+                    "body": "Great Work.",
+                    "author": "abc@test.com"
+                }
+            ]
+        }
+    ]
+}

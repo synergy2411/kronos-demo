@@ -16,6 +16,10 @@
 <div ng-controller="UserController" class="container">
 <h2>{{ greet }}</h2>
 
+<!-- {{ users | json }} -->
+
+<button ng-click="clicked()">Get Data</button>
+
 <ul class="list-unstyled">
     <!-- <li class="well" ng-repeat="user in users | limitTo : 2"> -->
     <li class="well" ng-repeat="user in users | orderBy : 'income' ">
