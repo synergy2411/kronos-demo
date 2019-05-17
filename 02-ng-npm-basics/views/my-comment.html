@@ -1,0 +1,47 @@
+<form name="commentForm">
+    <div class="form-group">
+        <!-- Stars -->
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="">Stars</label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+
+                <select class="form-control" ng-model="comment.stars" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        <!-- Body -->
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="">Message : </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <textarea ng-model="comment.body" class="form-control" required minlength="5"></textarea>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <label for="">Email : </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="email" email required ng-model="comment.author" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3">
+                <button ng-click="addComment(user)" ng-disabled="!commentForm.$valid" class="btn btn-primary btn-block">
+                    Add Comment
+                </button>
+
+                <!-- Form State : {{ commentForm.$valid }} -->
+            </div>
+        </div>
+    </div>
+</form>

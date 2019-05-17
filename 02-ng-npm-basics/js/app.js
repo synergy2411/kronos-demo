@@ -2,12 +2,59 @@
     function () {
         var app = angular.module("users-app", []);
 
-        app.controller("UserController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-            $scope.greet = "Good Morning All!";
-            $scope.users = users;
-            // var evens = getIntegers([1,2,3,4,5,6,7,8,9])();
-            // console.log(evens);
-        }]);
+        app.controller("UserController", ["$scope", "$rootScope", "$filter",
+            function ($scope, $rootScope, $filter) {
+                $scope.greet = "Good Morning All!";
+                $scope.users = users;
+                $scope.clicked = function(){
+                    alert("Who's this?");
+                }
+                // var evens = $filter('getIntegers')([1,2,3,4,5,6,7,8,9]);
+                // console.log(evens);
+            }]);
+
+        // app.controller("CommentFormController", function ($scope) {
+           
+        // })
+
+        app.directive("myComment", function () {
+            return {
+                restrict: "ACE",
+                // template : "<h1>My Comment Template</h1>"
+                templateUrl : './views/my-comment.html',
+                controller : function($scope){
+                    $scope.comment = {};
+                    $scope.addComment = function (user) {
+                        console.log($scope.comment);
+                        user.comments.push($scope.comment);
+                        $scope.comment = {};
+                    }
+                    
+                },
+                scope : {}
+            }
+        })
+
+        //Scope Isolation Methods :  
+            // '@' - one way binding effect
+            // '=' - Two way binding
+            // '&' - parent function call
+
+            app.directive("demoDirective", function(){
+                return {
+                    restrict : 'ACE',
+                    template : `
+                        <input type="text" ng-model="greet">
+                        {{ greet }}
+                        <button ng-click= "clicked()">Click Me</button>
+                        `,
+                    controller : function($scope){},
+                    scope : {
+                        "greet" : '=',
+                        "clicked" : '&'
+                    }
+                }
+            })
 
         app.filter("getIntegers", function () {
             return function (numbers) {
