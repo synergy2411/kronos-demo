@@ -1,0 +1,12 @@
+h1{
+    color : greenyellow;
+}
+
+.border{
+    border-bottom : 2px #ff45ff dashed;
+}
+
+.feature{
+    font-size: 1.2em;
+    font-weight: bold;
+}

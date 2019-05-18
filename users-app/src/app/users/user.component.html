@@ -1,0 +1,44 @@
+<h1>Users Componenet Loaded from Template!</h1>
+
+<div class="container">
+    <ul class=list-unstyled>
+
+        <li class="well" *ngFor="let user of users">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <img [src]="user.image" class="img-circle img-responsive">
+                    <button class="btn btn-info btn-sm btn-block" (click)="info(user)">
+                        More Info
+                    </button>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <h2>{{ user.firstName | uppercase}} {{ user.lastName  | titlecase }}</h2>
+
+                    <!-- <p [ngClass]= "['border', 'feature']">Date of Birth : <span [textContent]="user.dob"></span></p> -->
+                    <!-- <p [ngClass]= "{'border' : true, 'feature' : false }">Date of Birth : <span [textContent]="user.dob"></span></p> -->
+                    <p [ngClass]= "dynamicClass">Date of Birth : <span [textContent]="user.dob | date : 'MM-dd-yyyy'"></span>
+                    
+                        <button class="btn btn-small" (click)="onToggle()">Toggle Classes</button>
+                    </p>
+                    
+                    <p *ngIf="user.isWorking; else xyz">Income : {{ user.income | currency : 'INR'}} </p>
+                    <!-- Without Sugar syntax -->
+
+                    <!-- <ng-template [ngIf]="!user.isWorking">
+                        <p>*Income : {{ user.income }} </p>
+                    </ng-template> -->
+
+                    <p>Total Votes : {{ user.vote }}
+                        <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
+                        <input type="number" [(ngModel)]="user.vote">
+                    </p>
+                </div>
+            </div>
+
+            <ng-template #xyz>
+                <p>{{ user.firstName }} is not working now!</p>
+            </ng-template>
+
+        </li>
+    </ul>
+</div>
