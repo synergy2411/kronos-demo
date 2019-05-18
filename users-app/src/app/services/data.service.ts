@@ -4,7 +4,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
-// import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+
 @Injectable()
 export class DataService{
     constructor(private httpClient : HttpClient){}
@@ -13,10 +14,11 @@ export class DataService{
     }
     getApiData(){
         return this.httpClient.get("https://kronos-app-ng.firebaseio.com/userdata.json")
-                .map(response => <User[]> response)
+                // .map(response => <User[]> response)
                 
-            // .pipe(map(response => {
-            //     console.log(response)
-            // }))
+            .pipe(map(response => {
+                console.log(response)
+                return response;
+            }))
     }
 }

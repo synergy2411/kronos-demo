@@ -19,7 +19,7 @@ export class AppComponent {
     // this.users = USER_DATA;
     // this.users = this.dataService.getData();
     this.dataService.getApiData()
-      .subscribe(data => this.users = data,
+      .subscribe(data => this.users = <User[]>data,
         err => console.log(err),
         () => console.log("Data arrived!"));
   }

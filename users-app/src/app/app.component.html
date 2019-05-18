@@ -1,9 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <ul class="nav navbar-nav navbar-default">
+    <li><a [routerLink]="['about']">About</a></li>
+    <li><a [routerLink]="['product']">Product</a></li>
+    <li><a [routerLink]="['contact']">Contact</a></li>
+  </ul>
+</div>
+
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
+
+
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+  <!-- <app-new-employee></app-new-employee> -->
+  <!-- <app-overview></app-overview> -->
+</div>
+
+
+<hr>
 
 <div>
   <app-users [users] = "users" (xyz)="moreInfo($event)"></app-users>
